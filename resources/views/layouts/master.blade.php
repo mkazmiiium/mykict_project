@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>MYKICT</title>
     <link rel="shortcut icon" href="assets/img/logokict.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"rel="stylesheet">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/feather/feather.css">
     <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     {{-- <link rel="stylesheet" href="assets/plugins/simple-calendar/simple-calendar.css"> --}}
@@ -176,8 +177,8 @@
                             </div>
                         </span>
                     </a>
-                    <div class="dropdown-menu">
-                        {{-- <div class="user-header">
+                    {{-- <div class="dropdown-menu">
+                        <div class="user-header">
                             <div class="avatar avatar-sm">
                                 <img src="assets/img/profiles/avatar-01.jpg" alt="User Image"
                                     class="avatar-img rounded-circle">
@@ -186,21 +187,21 @@
                                 <h6>{{ Auth::user()->name }}</h6>
                                 <p class="text-muted mb-0">{{ Auth::user()->role->name }}</p>
                             </div>
-                        </div> --}}
-                        {{-- <a class="dropdown-item" href="profile.html">My Profile</a> --}}
+                        </div>
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
                         <a class="dropdown-item" href="{{ route('profile.show') }}">My Profile</a>
 
-                        {{-- <x-dropdown-link href="{{ route('profile.show') }}">
+                        <x-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('My Profile') }}
-                        </x-dropdown-link> --}}
+                        </x-dropdown-link>
 
-                        {{-- <a class="dropdown-item" href="inbox.html">Inbox</a> --}}
+                        <a class="dropdown-item" href="inbox.html">Inbox</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button>
                         </form>
 
-                    </div>
+                    </div> --}}
                 </li>
 
             </ul>
@@ -212,57 +213,53 @@
             <div class="sidebar-inner slimscroll">
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
+                        @if (Auth::user()->role_id == '1')
+                            <li class="menu-title">
+                                <span>Management</span>
+                            </li>
+
+                            <li>
+                                <a href="dashboard"><i class="feather-grid"></i> <span>Dashboard</span></a>
+                            </li>
+                        @endif
+
                         <li class="menu-title">
                             <span>Main Menu</span>
                         </li>
 
-                        @if (Auth::user()->role_id == '1')
-                        <li class="submenu active">
-                            <a href="#"><i class="feather-grid"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
-                            <ul>
-                                <li><a href="dashboard">Welcome Dashboard</a></li>
-                                <li><a href="admin-dashboard">Admin Dashboard</a></li>
-                                <!--<li><a href="teacher-dashboard">Teacher Dashboard</a></li>-->
-                                <li><a href="student-dashboard">Student Dashboard</a></li>
-                            </ul>
-                        </li>
-                    @endif
-
-
                         @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '5')
-                        <li class="submenu">
-                            <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Academicians</span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul>
-                                <li><a href="teachers.html">Monthly Achievement</a></li>
-                                <li><a href="add-teacher.html">Teacher Add</a></li>
-                                <li><a href="edit-teacher.html">Teacher Edit</a></li>
-                            </ul>
-                        </li>
-                        @endif
-
-                        @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '5')
-                        <li class="submenu">
-                            <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> SEMS</span> <span
-                                    class="menu-arrow"></span></a>
-                            <ul>
-                                <li><a href="{{ route('SEMS.dashboard') }}">SEMS</a></li>
-                            </ul>
-                        </li>
-                        @endif
-
-                        @if (Auth::user()->role_id == '1' || Auth::user()->role_id == '6')
-                            <li class="submenu">
-                                <a href="#"><i class="fas fa-graduation-cap"></i> <span>Smart Study Planner</span> <span
-                                        class="menu-arrow"></span></a>
+                            {{-- <li class="submenu">
+                                <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Academicians</span>
+                                    <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="admin-welcome">Administrator</a></li>
-                                    <li><a href="SSP-welcome">Student</a></li>
-                                    <!--<li><a href="add-student.html">Student Add</a></li>-->
-                                    <!--<li><a href="edit-student.html">Student Edit</a></li>-->
+                                    <li><a href="teachers.html">Monthly Achievement</a></li>
+                                    <li><a href="add-teacher.html">Teacher Add</a></li>
+                                    <li><a href="edit-teacher.html">Teacher Edit</a></li>
                                 </ul>
+                            </li> --}}
+
+                            <li>
+                                <a href="monthly-achievement"><i class="fa fa-star"></i> <span> Monthly
+                                        Achievement</span></a>
                             </li>
                         @endif
+
+                        <li class="menu-title">
+                            <span>User Profile</span>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('profile.show') }}">
+                                <i class="fa fa-address-card"></i> <span> My Profile</span>
+                            </a>
+                        </li>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="fa fa-undo"></i> <span> Logout</span>
+                            </button>
+                        </form>
 
                         {{-- <li class="submenu">
                             <a href="#"><i class="fas fa-building"></i> <span> Departments</span> <span

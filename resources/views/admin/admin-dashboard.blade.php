@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-sub-header">
-                        <h3 class="page-title">Welcome Admin!</h3>
+                        <h3 class="page-title">Welcome {{ Auth::user()->name }}!!</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
                             <li class="breadcrumb-item active">Admin</li>
@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <div class="db-widgets d-flex justify-content-between align-items-center">
                             <div class="db-info">
-                                <h6>ADLIN HANDSOME</h6>
+                                <h6>Students</h6>
                                 <h3>7631035600</h3>
                             </div>
                             <div class="db-icon">
