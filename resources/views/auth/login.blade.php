@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    {{-- <link rel="stylesheet" href="assets/plugins/alertify/alertify.min.css"/> --}}
 </head>
 
 <body>
@@ -40,6 +42,8 @@
                             <p class="account-subtitle">Need an account? <a href="{{ route('register') }}">Sign Up</a>
                             </p>
                             <h2>Sign in</h2>
+
+                            <x-validation-errors class="mb-4" />
 
                             @session('status')
                                 <div class="mb-4 font-medium text-sm text-green-600">
@@ -102,6 +106,10 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/feather.min.js"></script>
     <script src="assets/js/script.js"></script>
+
+    {{-- <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/plugins/alertify/alertify.min.js"></script>
+    <script src="assets/plugins/alertify/custom-alertify.min.js"></script> --}}
 </body>
 
 </html>
