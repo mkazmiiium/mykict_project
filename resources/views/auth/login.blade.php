@@ -39,7 +39,7 @@
                         <div class="login-right-wrap">
                             <!-- Heading -->
                             <h1>Welcome to MyKICT</h1>
-                            <p class="account-subtitle">Need an account? <a href="{{ route('register') }}">Sign Up</a>
+                            {{-- <p class="account-subtitle">Need an account? <a href="{{ route('register') }}">Sign Up</a> --}}
                             </p>
                             <h2>Sign in</h2>
 

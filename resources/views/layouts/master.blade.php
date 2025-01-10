@@ -221,6 +221,10 @@
                             <li>
                                 <a href="dashboard"><i class="feather-grid"></i> <span>Dashboard</span></a>
                             </li>
+
+                            {{-- <li>
+                                <a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> <span>New User</span></a>
+                            </li> --}}
                         @endif
 
                         <li class="menu-title">
