@@ -31,6 +31,12 @@ class User extends Authenticatable
          return $this->belongsTo(Role::class);
      }
 
+     // One User can have many Achievements
+     public function achievements()
+    {
+        return $this->hasMany(Achievement::class);
+    }
+
      protected $fillable = [
         'name',
         'email',
